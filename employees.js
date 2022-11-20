@@ -19,6 +19,8 @@
     stored on the object.
 */
 
+//FIGMA LINK AT BOTTOM
+
 //CODE HERE
 
 class Employee {
@@ -26,7 +28,7 @@ class Employee {
         this.name = name
         this.shifts = shifts
     }
-    getSchedule() {console.log(`${name} works on ${shifts}.`)}
+    getSchedule() {console.log(`${this.name} works on ${this.shifts}.`)}
 }
 
 
@@ -41,7 +43,7 @@ class Employee {
 */
 
 //CODE HERE
-let empOne = new Employee("Jess", "Wednesday - Saturday mornings")
+let empOne = new Employee("Jess", ["Wednesday", "Saturday mornings"])
 
 /*
     Call the `getSchedule` method on the
@@ -64,9 +66,10 @@ empOne.getSchedule()
 */
 
 //CODE HERE
-
-
-
+let empTwo = {...empOne}
+empTwo.name = "Nick"
+console.log(empTwo)
+console.log(empOne)
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a class called Manager that *extends* 
@@ -92,6 +95,15 @@ empOne.getSchedule()
 
 //CODE HERE
 
+class Manager extends Employee {
+    constructor(name, shifts, employees){
+    super(name, shifts)
+    this.employees = employees
+    }
+ getemployees() {console.log(`${this.name} manages ${this.employees}`)}
+ addEmployee(emp) {this.employees.push(emp)}
+}
+
 
 
 /*
@@ -106,7 +118,7 @@ empOne.getSchedule()
 */
 
 //CODE HERE
-
+let manager = new Manager("Bob", ["weekend", "Tuesdays", "and Thursdays"], ['Jess', ' Nick'])
 
 /*
     Call the `getEmployees` method on the
@@ -114,6 +126,7 @@ empOne.getSchedule()
 */
 
 //CODE HERE
+manager.getemployees()
 
 /*
     Call the `addEmployee` method on the 
@@ -122,7 +135,7 @@ empOne.getSchedule()
 */
 
 //CODE HERE 
-
+manager.addEmployee(" Fred")
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -130,3 +143,7 @@ empOne.getSchedule()
 */
 
 //CODE HERE
+manager.getemployees()
+
+
+//FIGMA LINK: https://www.figma.com/file/fVamIrOggXN1ecMJvCP6hv/Untitled?node-id=0%3A1&t=D6NS6hovB7OXkrNl-1

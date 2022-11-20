@@ -146,8 +146,8 @@ tags: 'kids',} ]
 //CODE HERE
 
 // const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-const filteredFood = foodArr.filter((t) => {
-  return t.tags === 'kids'
+const filteredFood = foodArr.filter((obj) => {
+  return obj.tags === "kids"
 })
 console.log(filteredFood)
 //////////////////PROBLEM 5////////////////////
@@ -190,8 +190,13 @@ console.log(filteredFood)
 */
 
 //CODE HERE
-
-
+const filterByProperty = (property, number, type) => {
+let filtered = foodArr.filter(Obj => {
+    if (type === "abouve") {return Obj[property] > number}
+else if (type === "below") {return Obj[property] < number}
+}
+)
+return filtered}
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
@@ -200,3 +205,4 @@ console.log(filteredFood)
 */
 
 //CODE HERE
+console.log(filterByProperty("price", 10, "abouve"))

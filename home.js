@@ -79,11 +79,10 @@ console.log(canWeDeliver(85206))
 // CODE HERE
 
 const canWeDeliverTwo = function(zipCode) {
-    for (i = 0; i < deliveryAreaZipCodes.length; i++){
         if (deliveryAreaZipCodes.includes(zipCode)) {return "You're in our delivery zone"}
     else {return "Sorry, we can't deliver to that address."} 
 }
-}
+
 
 console.log(canWeDeliverTwo(85209))
 
@@ -122,8 +121,9 @@ const deals = [
 
 //CODE HERE
 
-console.log(deals)
-console.log(deals)
+ deals[0].title = deals[0].title.replace("15", "10")
+ console.log(deals)
+
 
 /*
     The restaurant is going to continue its
@@ -140,3 +140,5 @@ console.log(deals)
 
 //CODE HERE
 
+deals[1].desc = deals[1].desc.replace("March", "April").trim()
+console.log(deals)
